@@ -21,11 +21,10 @@
         padding: 30px; 
         border-radius: 15px; 
         box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-        text-align: center;
     }
     h2 { color: #2c3e50; margin-bottom: 10px; }
     p { color: #5d6d7e; margin-bottom: 25px; line-height: 1.5; }
-    svg { width: 100%; height: auto; border-radius: 10px; }
+    img { width: 100%; height: auto; border-radius: 10px; }
 </style>
 </head>
 <body>
@@ -35,17 +34,10 @@
 
     <section id="grafico-energia">
         <h2>¿Cómo influyen mis hábitos diarios en la distribución de mi energía vital?</h2>
-        <p>Para este prototipo, use este gráfico para procesar un registro de una semana de datos personales. Clasifiqué las actividades en categorías (Salud, Alimentación, Productivo, Ocio y Descanso).</p>
-
-        <!-- SVG inline funcional -->
-        <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-            <!-- Salud -->
-            <path d="M0,200 C100,180 200,220 300,200 400,180 500,220 600,200 700,180 800,200" fill="#2ecc71"/>
-            <!-- Productivo -->
-            <path d="M0,150 C100,170 200,130 300,150 400,170 500,130 600,150 700,170 800,150" fill="#3498db"/>
-            <!-- Ocio -->
-            <path d="M0,100 C100,120 200,80 300,100 400,120 500,80 600,100 700,120 800,100" fill="#e74c3c"/>
-        </svg>
+        <p>Para este prototipo, utilicé este gráfico para procesar un registro de una semana de datos personales. Clasifiqué las actividades en categorías (Salud, Alimentación, Productivo, Ocio y Descanso).</p>
+        <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <img src="energia-streamgraph.svg" alt="Streamgraph de Energía Diaria">
+        </div>
     </section>
 </div>
 
