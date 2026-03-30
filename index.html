@@ -1,45 +1,113 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Streamgraph Energía</title>
-<style>
-    body { 
-        font-family: 'Inter', sans-serif; 
-        background-color: #f4f7f6; 
-        color: #333; 
-        margin: 0; 
-        padding: 40px; 
-        text-align: center; 
-    }
-    h1 { color: #2c3e50; margin-bottom: 20px; }
-    .container { 
-        max-width: 900px; 
-        margin: auto; 
-        background: white; 
-        padding: 30px; 
-        border-radius: 15px; 
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-    }
-    h2 { color: #2c3e50; margin-bottom: 10px; }
-    p { color: #5d6d7e; margin-bottom: 25px; line-height: 1.5; }
-    img { width: 100%; height: auto; border-radius: 10px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Visualizaciones - Infovis</title>
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f4f7f6; 
+            color: #333; 
+            margin: 0; 
+            padding: 40px; 
+            text-align: center; 
+        }
+        h1 { 
+            color: #2c3e50; 
+        }
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            background: white; 
+            padding: 20px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+        }
+        .viz-section { 
+            margin-bottom: 50px; 
+            padding: 20px; 
+            border-bottom: 1px solid #eee; 
+        }
+        h2 { 
+            color: #4A5BFF; 
+        }
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 10px; 
+        }
+        iframe { 
+            border: none; 
+            border-radius: 10px; 
+            width: 100%; 
+            height: 500px; 
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Streamgraph de Energía</h1>
+    <h1>Infovis</h1>
 
-    <section id="grafico-energia">
-        <h2>¿Cómo influyen mis hábitos diarios en la distribución de mi energía vital?</h2>
-        <p>Para este prototipo, utilicé este gráfico para procesar un registro de una semana de datos personales. Clasifiqué las actividades en categorías (Salud, Alimentación, Productivo, Ocio y Descanso).</p>
-        <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
-            <img src="energia-streamgraph.svg" alt="Streamgraph de Energía Diaria">
+    <div class="container">
+
+        <!-- SECCIÓN 1: RawGraphs -->
+        <div class="viz-section" id="rawgraph">
+            <h2>1. Visualización de RawGraphs</h2>
+            <p>Este gráfico muestra la distribución de mi energía diaria según mis hábitos.</p>
+            <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+                <img src="./viz.svg" alt="Gráfico RawGraphs">
+            </div>
         </div>
-    </section>
-</div>
+
+        <!-- SECCIÓN 2: Flourish -->
+        <div class="viz-section">
+            <h2>2. Make Over Monday 2020 - Semana 13</h2>
+            <p>Visualización interactiva usando Flourish.</p>
+            <div class="flourish-embed flourish-chart" data-src="visualisation/27964207">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+                <noscript>
+                    <img src="https://public.flourish.studio/visualisation/27964207/thumbnail" width="100%" alt="visualization" />
+                </noscript>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: Datawrapper -->
+        <div class="viz-section">
+            <h2>3. Pizza Topping in UK</h2>
+            <p>Visualización interactiva usando Datawrapper.</p>
+            <iframe title="Pizza topping in UK (men and women choices)" aria-label="Range Plot" id="datawrapper-chart-1NIqq" src="https://datawrapper.dwcdn.net/1NIqq/1/" scrolling="no"></iframe>
+            <script type="text/javascript">
+                window.addEventListener("message", function(event) {
+                    if (event.data["datawrapper-height"]) {
+                        var iframes = document.querySelectorAll("iframe");
+                        for (var t in event.data["datawrapper-height"]) {
+                            for (var i = 0; i < iframes.length; i++) {
+                                if (iframes[i].contentWindow === event.source) {
+                                    iframes[i].style.height = event.data["datawrapper-height"][t] + "px";
+                                }
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+
+        <hr style="margin: 50px 0; border: 0; border-top: 2px dashed #ccc;">
+
+
+        <!-- SECCIÓN 4: Streamgraph Energía -->
+        <section id="grafico-energia" class="viz-section">
+            <h2 style="color: #2c3e50;">¿Cómo influyen mis hábitos diarios en la distribución de mi energía vital?</h2>
+            <p>Para este prototipo, utilicé este gráfico para procesar un registro de una semana de datos personales. Clasifiqué las actividades en categorías (Salud, Alimentación, Productivo, Ocio y Descanso).</p>
+            <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+                <img src="energia-streamgraph.svg" alt="Streamgraph de Energía Diaria">
+            </div>
+        </section>
+            </div>
+        </section>
+
+    </div>
 
 </body>
 </html>
