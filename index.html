@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Graficos tp1</title>
+    <title>Mis Gráficos TP1 - Visualización de Datos</title>
     <style>
         body { 
             font-family: 'Inter', sans-serif; 
@@ -13,29 +13,54 @@
             padding: 40px; 
             text-align: center; 
         }
-        h1 { 
-            color: #2c3e50; 
-        }
         .container { 
             max-width: 900px; 
             margin: auto; 
             background: white; 
-            padding: 20px; 
+            padding: 40px 20px; 
             border-radius: 15px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
         }
+        h1 { 
+            color: #2c3e50; 
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .intro-text {
+            color: #666;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .viz-section { 
-            margin-bottom: 50px; 
+            margin-bottom: 60px; 
             padding: 20px; 
             border-bottom: 1px solid #eee; 
         }
         h2 { 
-            color: #4A5BFF; 
+            color: #2c3e50; 
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .img-container {
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         img { 
             max-width: 100%; 
             height: auto; 
-            border-radius: 10px; 
+            border-radius: 5px; 
+        }
+        /* Estilo para el pie de página */
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #999;
         }
     </style>
 </head>
@@ -43,29 +68,34 @@
 
     <div class="container">
         <h1>Mis Gráficos TP1</h1>
+        <p class="intro-text">
+            Este proyecto explora la intersección entre mis hábitos diarios, el bienestar emocional y la productividad. A través de diferentes herramientas de visualización, busco identificar patrones y flujos que definen mi rutina semanal.
+        </p>
+
+        <hr style="border: 0; height: 1px; background: #eee; margin-bottom: 40px;">
 
         <section id="grafico-energia" class="viz-section">
-            <h2 style="color: #2c3e50;">¿Cómo influyen mis hábitos diarios en la distribución de mi energía vital?</h2>
-            <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
-                <img src="agrupacion.viz.svg" alt="Streamgraph de Energía Diaria">
+            <h2>Flujo Energético: Evolución de hábitos a lo largo del tiempo</h2>
+            <div class="img-container">
+                <img src="energyviz.svg" alt="Streamgraph de Energía Diaria - RAWGraphs">
             </div>
         </section>
 
         <section id="heatmap-flourish" class="viz-section">
-            <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                
+            <h2>Distribución de Intensidad y Frecuencia de Actividades</h2>
+            <div class="img-container">
                 <div class="flourish-embed flourish-chart" data-src="visualisation/28648855">
                     <script src="https://public.flourish.studio/resources/embed.js"></script>
                     <noscript>
-                        <img src="https://public.flourish.studio/visualisation/28648855/thumbnail" width="100%" alt="visualization" />
+                        <img src="https://public.flourish.studio/visualisation/28648855/thumbnail" width="100%" alt="Visualización en Flourish" />
                     </noscript>
                 </div>
-                </div>
+            </div>
         </section>
-        <section id="datawrapper-balance" class="viz-section">
-            <h2 style="color: #2c3e50;">Balance Mensual: Análisis de Bienestar y Productividad</h2>
-            <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                
+
+        <section id="datawrapper-balance" class="viz-section" style="border-bottom: none;">
+            <h2>Balance Mensual: Análisis de Bienestar y Productividad</h2>
+            <div class="img-container">
                 <iframe title="Análisis Mensual: Bienestar y Productividad" aria-label="Column Chart" id="datawrapper-chart-WORfD" src="https://datawrapper.dwcdn.net/WORfD/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="442" data-external="1"></iframe>
                 
                 <script type="text/javascript">
@@ -81,11 +111,13 @@
                         }
                     });
                 </script>
-
             </div>
         </section>
+        
+        <footer>
+            Trabajo Práctico 1 - Análisis de Datos Propios
+        </footer>
     </div>
-    
 
 </body>
 </html>
