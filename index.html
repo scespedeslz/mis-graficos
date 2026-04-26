@@ -3,98 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Gráficos TP1 - Samira Céspedes</title>
+    <title>Análisis de Datos Propios - Samira Céspedes</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #f4f7f6; 
-            color: #333; 
+            background-color: #f0f2f5; 
+            color: #1a1a1a; 
             margin: 0; 
-            padding: 40px; 
-            text-align: center; 
+            padding: 20px; 
+            line-height: 1.6;
         }
         .container { 
-            max-width: 950px; 
+            max-width: 900px; 
             margin: auto; 
             background: white; 
-            padding: 40px 30px; 
-            border-radius: 15px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            padding: 50px 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
         }
-        h1 { color: #2c3e50; font-size: 2.5em; margin-bottom: 10px; }
-        .intro-text {
-            color: #666; font-size: 1.1em; line-height: 1.6; margin-bottom: 40px;
-            max-width: 750px; margin-left: auto; margin-right: auto;
+        header { border-bottom: 2px solid #eee; margin-bottom: 50px; padding-bottom: 20px; }
+        h1 { font-size: 2.8em; color: #2c3e50; margin: 0; }
+        .intro-text { color: #555; font-size: 1.1em; margin-top: 15px; }
+        
+        .viz-section { margin-bottom: 80px; text-align: left; }
+        .question-title { 
+            color: #2980b9; 
+            font-size: 1.8em; 
+            font-weight: 700; 
+            margin-bottom: 25px; 
+            display: block;
         }
-        .viz-section { 
-            margin-bottom: 60px; 
-            padding: 30px 20px; 
-            border-bottom: 1px solid #eee; 
-            text-align: left;
+        .tag { 
+            font-size: 0.6em; 
+            text-transform: uppercase; 
+            background: #e1e8ed; 
+            color: #607d8b; 
+            padding: 4px 10px; 
+            border-radius: 50px; 
+            margin-bottom: 10px;
+            display: inline-block;
         }
-        h2 { color: #2c3e50; font-size: 1.6em; margin-bottom: 15px; text-align: center; }
-        .description {
-            background: #f9f9f9; padding: 15px; border-left: 4px solid #2980b9;
-            margin-top: 20px; font-size: 0.95em; line-height: 1.5; color: #444;
+        .chart-box { margin: 20px 0; min-height: 300px; }
+        .analysis-box { 
+            background: #f8fbff; 
+            padding: 20px; 
+            border-radius: 12px; 
+            border-left: 5px solid #2980b9;
+            font-size: 1em;
         }
-        .img-container {
-            background: white; padding: 10px; border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin: 20px 0;
-        }
-        img { max-width: 100%; height: auto; border-radius: 5px; }
-        footer { margin-top: 40px; font-size: 0.9em; color: #999; }
+        footer { margin-top: 60px; color: #bbb; font-size: 0.8em; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Análisis de Datos Propios: TP1</h1>
-        <p class="intro-text">
-            Este proyecto explora la intersección entre mis hábitos diarios, el bienestar emocional y la productividad. 
-            A través de diferentes herramientas de visualización, busco identificar patrones y flujos que definen mi rutina semanal entre marzo y abril de 2026.
-        </p>
+        <header>
+            <h1>Marea Interna</h1>
+            <p class="intro-text">Un registro biométrico de energía y hábitos (Marzo - Abril 2026).</p>
+        </header>
 
-        <hr style="border: 0; height: 1px; background: #eee; margin-bottom: 40px;">
-
-        <section id="grafico-raw" class="viz-section">
-            <h2>1. Flujo Energético: Evolución de hábitos</h2>
-            <div class="img-container" style="text-align: center;">
-                <img src="energyviz.svg" alt="Streamgraph de Energía Diaria - RAWGraphs">
+        <section class="viz-section">
+            <span class="tag">RAWGraphs</span>
+            <label class="question-title">¿Cómo fluyen mis estados diarios a lo largo del tiempo?</label>
+            <div class="chart-box" style="text-align: center;">
+                <img src="energyviz.svg" alt="Streamgraph de Energía Diaria" style="max-width: 100%;">
             </div>
-            <div class="description">
-                <strong>Análisis de Flujo:</strong> Este Streamgraph muestra la distribución de mis actividades a lo largo del tiempo. La amplitud de las áreas permite visualizar cómo mi energía se desplaza entre el estudio, el trabajo y el descanso, revelando la variabilidad de mi carga diaria.
+            <div class="analysis-box">
+                Este Streamgraph visualiza la transición entre mis estados dominantes. Permite ver cómo el flujo de energía no es constante, sino que se ensancha o contrae según la carga de trabajo y el descanso acumulado.
             </div>
         </section>
 
-        <section id="heatmap-flourish" class="viz-section">
-            <h2>2. Distribución Horaria de Energía Promedio</h2>
-            <div class="flourish-embed flourish-heatmap" data-src="visualisation/28699459">
-                <script src="https://public.flourish.studio/resources/embed.js"></script>
+        <section class="viz-section">
+            <span class="tag">Flourish</span>
+            <label class="question-title">¿En qué momentos de la semana alcanzo mi pico de productividad?</label>
+            <div class="chart-box">
+                <div class="flourish-embed flourish-heatmap" data-src="visualisation/28699459">
+                    <script src="https://public.flourish.studio/resources/embed.js"></script>
+                </div>
             </div>
-            <div class="description">
-                <strong>Análisis de Rutina:</strong> A partir del promedio de 40 días de registro, este mapa de calor identifica mi "semana tipo". Se destacan picos de energía los lunes y martes por la mañana, y una recuperación energética notable los domingos por la tarde tras el descanso matutino.
+            <div class="analysis-box">
+                Al promediar seis semanas de datos, el mapa de calor revela que mis mañanas de lunes y martes son los puntos críticos de mayor energía (promedios de 4.8), mientras que los fines de semana presentan una "activación lenta" recién después del mediodía.
             </div>
         </section>
 
-        <section id="tableau-burbujas" class="viz-section">
-            <h2>3. Ecosistema de Vitalidad y Bienestar</h2>
-            <div class="img-container">
+        <section class="viz-section">
+            <span class="tag">Tableau</span>
+            <label class="question-title">¿Qué actividades disparan mis niveles de bienestar?</label>
+            <div class="chart-box">
                 <div class='tableauPlaceholder' id='viz1777173155589' style='position: relative'>
-                    <noscript><a href='#'><img alt='Ecosistema de Vitalidad y Bienestar ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Distribuciondeenergiasegunactividad&#47;Hoja1&#47;1_rss.png' style='border: none' /></a></noscript>
                     <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                        <param name='embed_code_version' value='3' /> 
-                        <param name='site_root' value='' />
                         <param name='name' value='Distribuciondeenergiasegunactividad&#47;Hoja1' />
-                        <param name='tabs' value='no' />
-                        <param name='toolbar' value='yes' />
                         <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Distribuciondeenergiasegunactividad&#47;Hoja1&#47;1.png' /> 
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='language' value='es-ES' />
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' />
                     </object>
                 </div>                
                 <script type='text/javascript'>                    
@@ -106,26 +107,25 @@
                     vizElement.parentNode.insertBefore(scriptElement, vizElement);                
                 </script>
             </div>
-            <div class="description">
-                <strong>Correlación:</strong> Este gráfico de burbujas cruza mis actividades con el estado de ánimo percibido. Permite identificar qué tareas (como el entrenamiento o el ocio) actúan como disparadores positivos de ánimo comparado con las tareas de alta demanda cognitiva.
+            <div class="analysis-box">
+                Este ecosistema de burbujas muestra que las actividades de ocio y entrenamiento físico tienen una correlación directa con mis estados de ánimo más altos (4 y 5), funcionando como reguladores emocionales frente al estrés del estudio.
             </div>
         </section>
 
-        <section id="datawrapper-balance" class="viz-section" style="border-bottom: none;">
-            <h2>4. Balance Mensual: Índices de Bienestar</h2>
-            <div class="img-container">
-                <iframe title="Balance Mensual" aria-label="Column Chart" id="datawrapper-chart-WORfD" src="https://datawrapper.dwcdn.net/WORfD/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="406"></iframe>
-                <script type="text/javascript">
-                    window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});
-                </script>
+        <section class="viz-section">
+            <span class="tag">Datawrapper</span>
+            <label class="question-title">¿Cuál es el balance final de mi salud y productividad este mes?</label>
+            <div class="chart-box">
+                <iframe title="Balance Mensual" aria-label="Column Chart" id="datawrapper-chart-WORfD" src="https://datawrapper.dwcdn.net/WORfD/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe>
+                <script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
             </div>
-            <div class="description">
-                <strong>Cierre:</strong> Resumen final de los indicadores clave. Este gráfico de barras muestra los promedios generales de energía, ánimo y enfoque, proporcionando una visión cuantitativa del balance de mi mes.
+            <div class="analysis-box">
+                El resumen cuantitativo muestra que logré mantener un balance positivo, con un índice de enfoque promedio superior a 3, a pesar de las fluctuaciones energéticas registradas.
             </div>
         </section>
-        
+
         <footer>
-            Samira Céspedes - Trabajo Práctico 1 | Visualización de Datos 2026
+            Samira Céspedes | Visualización de Datos | Abril 2026
         </footer>
     </div>
 
