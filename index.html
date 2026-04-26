@@ -3,79 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análisis de Datos Propios - Samira Céspedes</title>
+    <title>TP1: Análisis de Datos Personales - Samira Céspedes</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #f0f2f5; 
-            color: #1a1a1a; 
+            background-color: #f8fafc; 
+            color: #1e293b; 
             margin: 0; 
-            padding: 20px; 
+            padding: 40px 20px; 
             line-height: 1.6;
         }
+
         .container { 
-            max-width: 900px; 
+            max-width: 1000px; 
             margin: auto; 
             background: white; 
-            padding: 50px 40px; 
-            border-radius: 20px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05); 
+            padding: 60px; 
+            border-radius: 24px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03); 
         }
-        header { border-bottom: 2px solid #eee; margin-bottom: 50px; padding-bottom: 20px; }
-        h1 { font-size: 2.8em; color: #2c3e50; margin: 0; }
-        .intro-text { color: #555; font-size: 1.1em; margin-top: 15px; }
-        
-        .viz-section { margin-bottom: 80px; text-align: left; }
+
+        header { 
+            text-align: center;
+            margin-bottom: 60px; 
+            border-bottom: 1px solid #e2e8f0; 
+            padding-bottom: 40px; 
+        }
+
+        h1 { 
+            font-size: 3em; 
+            color: #0f172a; 
+            margin: 0; 
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .intro-text { 
+            color: #64748b; 
+            font-size: 1.2em; 
+            margin-top: 20px; 
+            max-width: 700px; 
+            margin-left: auto; 
+            margin-right: auto;
+        }
+
+        .viz-section { 
+            margin-bottom: 100px; 
+            text-align: left; 
+        }
+
         .question-title { 
-            color: #2980b9; 
-            font-size: 1.8em; 
-            font-weight: 700; 
-            margin-bottom: 25px; 
+            color: #2563eb; 
+            font-size: 2em; 
+            font-weight: 600; 
+            margin-bottom: 30px; 
             display: block;
+            line-height: 1.2;
         }
-        .tag { 
-            font-size: 0.6em; 
-            text-transform: uppercase; 
-            background: #e1e8ed; 
-            color: #607d8b; 
-            padding: 4px 10px; 
-            border-radius: 50px; 
-            margin-bottom: 10px;
-            display: inline-block;
+
+        .chart-box { 
+            margin: 30px 0; 
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
         }
-        .chart-box { margin: 20px 0; min-height: 300px; }
+
         .analysis-box { 
-            background: #f8fbff; 
-            padding: 20px; 
+            background: #f1f5f9; 
+            padding: 25px; 
             border-radius: 12px; 
-            border-left: 5px solid #2980b9;
-            font-size: 1em;
+            font-size: 1.05em;
+            color: #334155;
+            border-left: 6px solid #2563eb;
         }
-        footer { margin-top: 60px; color: #bbb; font-size: 0.8em; }
+
+        .tool-credit {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.85em;
+            color: #94a3b8;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        img { max-width: 100%; height: auto; display: block; margin: auto; }
+
+        footer { 
+            text-align: center;
+            margin-top: 80px; 
+            color: #94a3b8; 
+            font-size: 0.9em; 
+            border-top: 1px solid #e2e8f0;
+            padding-top: 30px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <h1>Marea Interna</h1>
-            <p class="intro-text">Un registro biométrico de energía y hábitos (Marzo - Abril 2026).</p>
+            <h1>TP1: Análisis de datos</h1>
+            <p class="intro-text">
+                <b>Marea Interna:</b> Un registro detallado de mi energía, hábitos y productividad durante los meses de marzo y abril de 2026. Este trabajo busca decodificar los ritmos de mi rutina para entender cómo fluctúa mi bienestar según la actividad realizada.
+            </p>
         </header>
 
         <section class="viz-section">
-            <span class="tag">RAWGraphs</span>
             <label class="question-title">¿Cómo fluyen mis estados diarios a lo largo del tiempo?</label>
-            <div class="chart-box" style="text-align: center;">
-                <img src="energyviz.svg" alt="Streamgraph de Energía Diaria" style="max-width: 100%;">
+            <div class="chart-box">
+                <img src="energyviz.svg" alt="Streamgraph de Energía Diaria">
             </div>
             <div class="analysis-box">
-                Este Streamgraph visualiza la transición entre mis estados dominantes. Permite ver cómo el flujo de energía no es constante, sino que se ensancha o contrae según la carga de trabajo y el descanso acumulado.
+                Este flujo visual permite observar la transición entre mis estados dominantes. Revela cómo la energía no es un recurso estático, sino una marea que se expande o contrae según el balance entre el descanso y la productividad.
+                <span class="tool-credit">Visualización creada con RAWGraphs</span>
             </div>
         </section>
 
         <section class="viz-section">
-            <span class="tag">Flourish</span>
             <label class="question-title">¿En qué momentos de la semana alcanzo mi pico de productividad?</label>
             <div class="chart-box">
                 <div class="flourish-embed flourish-heatmap" data-src="visualisation/28699459">
@@ -83,23 +130,34 @@
                 </div>
             </div>
             <div class="analysis-box">
-                Al promediar seis semanas de datos, el mapa de calor revela que mis mañanas de lunes y martes son los puntos críticos de mayor energía (promedios de 4.8), mientras que los fines de semana presentan una "activación lenta" recién después del mediodía.
+                El análisis de promedios semanales identifica los lunes y martes por la mañana como mis puntos críticos de mayor rendimiento. Los fines de semana muestran un patrón de recuperación con una activación mucho más lenta.
+                <span class="tool-credit">Visualización creada con Flourish</span>
             </div>
         </section>
 
         <section class="viz-section">
-            <span class="tag">Tableau</span>
             <label class="question-title">¿Qué actividades disparan mis niveles de bienestar?</label>
             <div class="chart-box">
-                <div class='tableauPlaceholder' id='viz1777173155589' style='position: relative'>
+                <div class='tableauPlaceholder' id='viz1777214480512' style='position: relative'>
+                    <noscript><a href='#'><img alt='Hoja 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Distribuciondeenergiasegunactividad&#47;Hoja1&#47;1_rss.png' style='border: none' /></a></noscript>
                     <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                        <param name='embed_code_version' value='3' /> 
+                        <param name='site_root' value='' />
                         <param name='name' value='Distribuciondeenergiasegunactividad&#47;Hoja1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
                         <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Distribuciondeenergiasegunactividad&#47;Hoja1&#47;1.png' /> 
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='es-ES' />
                     </object>
                 </div>                
                 <script type='text/javascript'>                    
-                    var divElement = document.getElementById('viz1777173155589');                    
+                    var divElement = document.getElementById('viz1777214480512');                    
                     var vizElement = divElement.getElementsByTagName('object')[0];                    
                     vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
                     var scriptElement = document.createElement('script');                    
@@ -108,24 +166,25 @@
                 </script>
             </div>
             <div class="analysis-box">
-                Este ecosistema de burbujas muestra que las actividades de ocio y entrenamiento físico tienen una correlación directa con mis estados de ánimo más altos (4 y 5), funcionando como reguladores emocionales frente al estrés del estudio.
+                A través de este ecosistema de actividades, se observa que el ejercicio físico y el ocio actúan como los principales catalizadores de mi estado de ánimo, compensando los periodos de alta demanda cognitiva.
+                <span class="tool-credit">Visualización creada con Tableau Public</span>
             </div>
         </section>
 
         <section class="viz-section">
-            <span class="tag">Datawrapper</span>
             <label class="question-title">¿Cuál es el balance final de mi salud y productividad este mes?</label>
             <div class="chart-box">
                 <iframe title="Balance Mensual" aria-label="Column Chart" id="datawrapper-chart-WORfD" src="https://datawrapper.dwcdn.net/WORfD/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe>
                 <script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
             </div>
             <div class="analysis-box">
-                El resumen cuantitativo muestra que logré mantener un balance positivo, con un índice de enfoque promedio superior a 3, a pesar de las fluctuaciones energéticas registradas.
+                Este resumen final consolida los indicadores clave del periodo. A pesar de las variaciones diarias, el balance general muestra una tendencia hacia la estabilidad y un enfoque sostenido.
+                <span class="tool-credit">Visualización creada con Datawrapper</span>
             </div>
         </section>
 
         <footer>
-            Samira Céspedes | Visualización de Datos | Abril 2026
+            Samira Céspedes | Visualización de Datos | 2026
         </footer>
     </div>
 
