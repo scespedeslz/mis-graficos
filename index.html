@@ -20,7 +20,7 @@
             max-width: 1000px; 
             margin: auto; 
             background: white; 
-            padding: 60px; 
+            padding: 40px 60px; 
             border-radius: 24px; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.03); 
         }
@@ -50,7 +50,7 @@
         }
 
         .viz-section { 
-            margin-bottom: 100px; 
+            margin-bottom: 80px; 
             text-align: left; 
         }
 
@@ -58,16 +58,16 @@
             color: #0f172a; 
             font-size: 2em; 
             font-weight: 600; 
-            margin-bottom: 30px; 
+            margin-bottom: 25px; 
             display: block;
             line-height: 1.2;
         }
 
         .chart-box { 
-            margin: 30px 0; 
+            margin: 20px 0; 
             background: #ffffff;
             border-radius: 16px;
-            overflow: hidden;
+            width: 100%;
         }
 
         .analysis-box { 
@@ -77,6 +77,7 @@
             font-size: 1.05em;
             color: #334155;
             border-left: 6px solid #0f172a; 
+            margin-top: 20px;
         }
 
         .tool-credit {
@@ -89,11 +90,11 @@
             letter-spacing: 1px;
         }
 
-        img { max-width: 100%; height: auto; display: block; margin: auto; }
+        img { max-width: 100%; height: auto; display: block; margin: auto; border-radius: 8px; }
 
         footer { 
             text-align: center;
-            margin-top: 80px; 
+            margin-top: 60px; 
             color: #94a3b8; 
             font-size: 0.9em; 
             border-top: 1px solid #e2e8f0;
@@ -125,7 +126,9 @@
         <section class="viz-section">
             <label class="question-title">¿En qué momentos de la semana alcanzo mi pico de productividad?</label>
             <div class="chart-box">
-                <div class="flourish-embed flourish-heatmap" data-src="visualisation/28699459"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28699459/thumbnail" width="100%" alt="heatmap visualization" /></noscript></div>
+                <div class="flourish-embed flourish-heatmap" data-src="visualisation/28699459">
+                    <script src="https://public.flourish.studio/resources/embed.js"></script>
+                    <noscript><img src="https://public.flourish.studio/visualisation/28699459/thumbnail" width="100%" alt="heatmap visualization" /></noscript>
                 </div>
             </div>
             <div class="analysis-box">
@@ -133,59 +136,3 @@
                 <span class="tool-credit">Visualización creada con Flourish</span>
             </div>
         </section>
-
-        <section class="viz-section">
-            <label class="question-title">¿Qué actividades disparan mis niveles de bienestar?</label>
-            <div class="chart-box">
-                <div class='tableauPlaceholder' id='viz1777214480512' style='position: relative'>
-                    <noscript><a href='#'><img alt='Hoja 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Distribuciondeenergiasegunactividad&#47;Hoja1&#47;1_rss.png' style='border: none' /></a></noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                        <param name='embed_code_version' value='3' /> 
-                        <param name='site_root' value='' />
-                        <param name='name' value='Distribuciondeenergiasegunactividad&#47;Hoja1' />
-                        <param name='tabs' value='no' />
-                        <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Distribuciondeenergiasegunactividad&#47;Hoja1&#47;1.png' /> 
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='language' value='es-ES' />
-                    </object>
-                </div>                
-                <script type='text/javascript'>                    
-                    var divElement = document.getElementById('viz1777214480512');                    
-                    var vizElement = divElement.getElementsByTagName('object')[0];                    
-                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
-                    var scriptElement = document.createElement('script');                    
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-                </script>
-            </div>
-            <div class="analysis-box">
-                Acá se ve que el deporte y el tiempo libre son las cosas que más me suben el ánimo. Estas actividades me ayudan a equilibrar el cansancio que me genera el estudio.
-                <span class="tool-credit">Visualización creada con Tableau Public</span>
-            </div>
-        </section>
-
-        <section class="viz-section">
-            <label class="question-title">¿Cuál es el balance final de mi salud y productividad este mes?</label>
-            <div class="chart-box">
-                <iframe title="Balance Mensual" aria-label="Column Chart" id="datawrapper-chart-WORfD" src="https://datawrapper.dwcdn.net/WORfD/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe>
-                <script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
-            </div>
-            <div class="analysis-box">
-                Este gráfico resume los resultados finales. Muestra que, a pesar de los cambios de cada día, logré mantener un buen equilibrio general en mi energía y concentración.
-                <span class="tool-credit">Visualización creada con Datawrapper</span>
-            </div>
-        </section>
-
-        <footer>
-            Samira Céspedes | Visualización de Datos | 2026
-        </footer>
-    </div>
-
-</body>
-</html>
