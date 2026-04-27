@@ -20,7 +20,7 @@
             max-width: 1000px; 
             margin: auto; 
             background: white; 
-            padding: 40px 60px; 
+            padding: 60px; 
             border-radius: 24px; 
             box-shadow: 0 10px 25px rgba(0,0,0,0.03); 
         }
@@ -52,11 +52,15 @@
         .viz-section { 
             margin-bottom: 80px; 
             text-align: left; 
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 40px;
         }
+
+        .viz-section:last-of-type { border-bottom: none; }
 
         .question-title { 
             color: #0f172a; 
-            font-size: 2em; 
+            font-size: 1.8em; 
             font-weight: 600; 
             margin-bottom: 25px; 
             display: block;
@@ -67,6 +71,7 @@
             margin: 20px 0; 
             background: #ffffff;
             border-radius: 16px;
+            overflow: hidden;
             width: 100%;
         }
 
@@ -90,7 +95,7 @@
             letter-spacing: 1px;
         }
 
-        img { max-width: 100%; height: auto; display: block; margin: auto; border-radius: 8px; }
+        img { max-width: 100%; height: auto; display: block; margin: auto; }
 
         footer { 
             text-align: center;
@@ -108,17 +113,17 @@
         <header>
             <h1>TP1: Análisis de datos</h1>
             <p class="intro-text">
-                <b>Performance & Habits Insights:</b> Un análisis de mi rendimiento y rutinas durante marzo y abril de 2026. Este trabajo busca entender cómo varían mis niveles de productividad según las actividades que realizo cada día.
+                <b>Performance & Habits Insights:</b> Análisis de rendimiento y rutinas ($N=40$). Un estudio longitudinal de mi energía y bienestar durante marzo y abril de 2026.
             </p>
         </header>
 
         <section class="viz-section">
             <label class="question-title">¿Cómo fluyen mis estados diarios a lo largo del tiempo?</label>
             <div class="chart-box">
-                <img src="energyviz.svg" alt="Gráfico de Energía Diaria">
+                <img src="energyviz.svg" alt="Streamgraph de Energía">
             </div>
             <div class="analysis-box">
-                Este gráfico muestra cómo cambian mis actividades principales día a día. Permite ver que mi energía no es siempre la misma, sino que sube y baja dependiendo de cuánto descanso o cuánto trabajo.
+                Este Streamgraph muestra la evolución dinámica de mis actividades. Se observa cómo el volumen productivo (rojo) alcanza su pico hacia la tarde, requiriendo periodos previos de descanso.
                 <span class="tool-credit">Visualización creada con RAWGraphs</span>
             </div>
         </section>
@@ -128,11 +133,66 @@
             <div class="chart-box">
                 <div class="flourish-embed flourish-heatmap" data-src="visualisation/28699459">
                     <script src="https://public.flourish.studio/resources/embed.js"></script>
-                    <noscript><img src="https://public.flourish.studio/visualisation/28699459/thumbnail" width="100%" alt="heatmap visualization" /></noscript>
                 </div>
             </div>
             <div class="analysis-box">
-                Al ver los promedios de la semana, se nota que los lunes y martes por la mañana son mis momentos de más energía. En cambio, los fines de semana empiezo el día con un ritmo mucho más tranquilo.
+                Heatmap de promedios semanales. Los niveles máximos de energía (4.8/5) se concentran los lunes y martes por la mañana, con valles de recuperación marcados durante los fines de semana.
                 <span class="tool-credit">Visualización creada con Flourish</span>
             </div>
         </section>
+
+        <section class="viz-section">
+            <label class="question-title">¿Qué actividades disparan mis niveles de bienestar?</label>
+            <div class="chart-box">
+                <div class='tableauPlaceholder' id='viz1777214480512' style='position: relative'>
+                    <noscript><a href='#'><img alt='Hoja 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Distribuciondeenergiasegunactividad&#47;Hoja1&#47;1_rss.png' style='border: none' /></a></noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                        <param name='embed_code_version' value='3' /> 
+                        <param name='site_root' value='' />
+                        <param name='name' value='Distribuciondeenergiasegunactividad&#47;Hoja1' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Distribuciondeenergiasegunactividad&#47;Hoja1&#47;1.png' /> 
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='es-ES' />
+                    </object>
+                </div>                
+                <script type='text/javascript'>                    
+                    var divElement = document.getElementById('viz1777214480512');                    
+                    var vizElement = divElement.getElementsByTagName('object')[0];                    
+                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+                    var scriptElement = document.createElement('script');                    
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                </script>
+            </div>
+            <div class="analysis-box">
+                Distribución de energía y ánimo por actividad. El deporte y las salidas sociales actúan como catalizadores de energía (burbujas grandes) y bienestar emocional (verdes oscuros).
+                <span class="tool-credit">Visualización creada con Tableau Public</span>
+            </div>
+        </section>
+
+        <section class="viz-section">
+            <label class="question-title">¿Cuál es el balance final de mi salud y productividad?</label>
+            <div class="chart-box">
+                <iframe title="Balance Mensual" aria-label="Column Chart" id="datawrapper-chart-WORfD" src="https://datawrapper.dwcdn.net/WORfD/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe>
+                <script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+            </div>
+            <div class="analysis-box">
+                Balance robusto basado en $N=40$ días. Con un promedio de 1.1 en una escala de -2 a 2, los datos confirman la estabilidad operativa y la sostenibilidad de la rutina analizada.
+                <span class="tool-credit">Visualización creada con Datawrapper</span>
+            </div>
+        </section>
+
+        <footer>
+            Samira Céspedes | Visualización de Datos | 2026
+        </footer>
+    </div>
+
+</body>
+</html>
