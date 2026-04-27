@@ -22,7 +22,10 @@
             background: white; 
             padding: 60px; 
             border-radius: 24px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03); 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            /* Esto asegura que el contenedor blanco crezca con el contenido */
+            display: block;
+            overflow: hidden; 
         }
 
         header { 
@@ -52,16 +55,16 @@
         .viz-section { 
             margin-bottom: 80px; 
             text-align: left; 
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 40px;
+            clear: both; /* Evita que los elementos se encimen */
+            display: block;
+            width: 100%;
         }
-
-        .viz-section:last-of-type { border-bottom: none; }
 
         .question-title { 
             color: #0f172a; 
             font-size: 1.8em; 
             font-weight: 600; 
+            margin-top: 40px;
             margin-bottom: 25px; 
             display: block;
             line-height: 1.2;
@@ -71,8 +74,8 @@
             margin: 20px 0; 
             background: #ffffff;
             border-radius: 16px;
-            overflow: hidden;
             width: 100%;
+            min-height: 100px; /* Asegura espacio mínimo para el embed */
         }
 
         .analysis-box { 
@@ -83,6 +86,9 @@
             color: #334155;
             border-left: 6px solid #0f172a; 
             margin-top: 20px;
+            margin-bottom: 40px;
+            display: block;
+            clear: both;
         }
 
         .tool-credit {
@@ -104,7 +110,11 @@
             font-size: 0.9em; 
             border-top: 1px solid #e2e8f0;
             padding-top: 30px;
+            clear: both;
         }
+
+        /* Ajuste específico para Tableau que suele causar problemas de altura */
+        .tableauPlaceholder { margin: auto; }
     </style>
 </head>
 <body>
@@ -117,8 +127,8 @@
             </p>
         </header>
 
-        <section class="viz-section">
-            <label class="question-title">¿Cómo fluyen mis estados diarios a lo largo del tiempo?</label>
+        <div class="viz-section">
+            <h2 class="question-title">¿Cómo fluyen mis estados diarios a lo largo del tiempo?</h2>
             <div class="chart-box">
                 <img src="energyviz.svg" alt="Streamgraph de Energía">
             </div>
@@ -126,23 +136,23 @@
                 Este Streamgraph muestra la evolución dinámica de mis actividades. Se observa cómo el volumen productivo (rojo) alcanza su pico hacia la tarde, requiriendo periodos previos de descanso.
                 <span class="tool-credit">Visualización creada con RAWGraphs</span>
             </div>
-        </section>
+        </div>
 
-        <section class="viz-section">
-            <label class="question-title">¿En qué momentos de la semana alcanzo mi pico de productividad?</label>
+        <div class="viz-section">
+            <h2 class="question-title">¿En qué momentos de la semana alcanzo mi pico de productividad?</h2>
             <div class="chart-box">
                 <div class="flourish-embed flourish-heatmap" data-src="visualisation/28699459">
                     <script src="https://public.flourish.studio/resources/embed.js"></script>
                 </div>
             </div>
             <div class="analysis-box">
-                Heatmap de promedios semanales. Los niveles máximos de energía (4.8/5) se concentran los lunes y martes por la mañana, con valles de recuperación marcados durante los fines de semana.
-                <span class="tool-credit">Visualización creada con Flourish</span>
+                Al ver los promedios de la semana, se nota que los lunes y martes por la mañana son mis momentos de más energía. En cambio, los fines de semana empiezo el día con un ritmo mucho más tranquilo.
+                <span class="tool-credit">VISUALIZACIÓN CREADA CON FLOURISH</span>
             </div>
-        </section>
+        </div>
 
-        <section class="viz-section">
-            <label class="question-title">¿Qué actividades disparan mis niveles de bienestar?</label>
+        <div class="viz-section">
+            <h2 class="question-title">¿Qué actividades disparan mis niveles de bienestar?</h2>
             <div class="chart-box">
                 <div class='tableauPlaceholder' id='viz1777214480512' style='position: relative'>
                     <noscript><a href='#'><img alt='Hoja 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Distribuciondeenergiasegunactividad&#47;Hoja1&#47;1_rss.png' style='border: none' /></a></noscript>
@@ -172,13 +182,13 @@
                 </script>
             </div>
             <div class="analysis-box">
-                Distribución de energía y ánimo por actividad. El deporte y las salidas sociales actúan como catalizadores de energía (burbujas grandes) y bienestar emocional (verdes oscuros).
+                Acá se ve que el deporte y el tiempo libre son las cosas que más me suben el ánimo. Estas actividades me ayudan a equilibrar el cansancio que me genera el estudio.
                 <span class="tool-credit">Visualización creada con Tableau Public</span>
             </div>
-        </section>
+        </div>
 
-        <section class="viz-section">
-            <label class="question-title">¿Cuál es el balance final de mi salud y productividad?</label>
+        <div class="viz-section">
+            <h2 class="question-title">¿Cuál es el balance final de mi salud y productividad?</h2>
             <div class="chart-box">
                 <iframe title="Balance Mensual" aria-label="Column Chart" id="datawrapper-chart-WORfD" src="https://datawrapper.dwcdn.net/WORfD/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe>
                 <script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
@@ -187,12 +197,11 @@
                 Balance robusto basado en $N=40$ días. Con un promedio de 1.1 en una escala de -2 a 2, los datos confirman la estabilidad operativa y la sostenibilidad de la rutina analizada.
                 <span class="tool-credit">Visualización creada con Datawrapper</span>
             </div>
-        </section>
+        </div>
 
         <footer>
             Samira Céspedes | Visualización de Datos | 2026
         </footer>
     </div>
-
 </body>
 </html>
